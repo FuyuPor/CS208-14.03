@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-
 /* GET home page. */
+
 router.get('/', function(req, res, next){
   try {
     req.db.query('SELECT * FROM todos;', (err, results) => {
@@ -9,8 +9,44 @@ router.get('/', function(req, res, next){
         console.error('Error fetching todos:', err);
         return res.status(500).send('Error fetching todos');
       }
-      res.render('index', { title: 'My Simple TODO', todos: results });
+      res.render('index', {title: "Downtown Donuts"});
     });
+  } catch (error) {
+    console.error('Error fetching items:', error);
+    res.status(500).send('Error fetching items');
+  }
+});
+
+router.get('/index', (req, res) => {
+  try {
+      res.render('index', {title: "Downtown Donuts"});
+  } catch (error) {
+    console.error('Error fetching items:', error);
+    res.status(500).send('Error fetching items');
+  }
+});
+
+router.get('/about', (req, res) => {
+  try {
+      res.render('about', {title: "Downtown Donuts"});
+  } catch (error) {
+    console.error('Error fetching items:', error);
+    res.status(500).send('Error fetching items');
+  }
+});
+
+router.get('/menu', (req, res) => {
+    try {
+      res.render('menu', {title: "Downtown Donuts"});
+  } catch (error) {
+    console.error('Error fetching items:', error);
+    res.status(500).send('Error fetching items');
+  }
+});
+
+router.get('/reviews', (req, res) => {
+    try {
+      res.render('reviews', {title: "Downtown Donuts"});
   } catch (error) {
     console.error('Error fetching items:', error);
     res.status(500).send('Error fetching items');
