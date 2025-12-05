@@ -54,9 +54,9 @@ router.get('/reviews', (req, res) => {
 });
 
 router.post('/create', function (req, res, next) {
-    const { task } = req.body;
+    const { comment } = req.body;
     try {
-      req.db.query('INSERT INTO todos (task) VALUES (?);', [task], (err, results) => {
+      req.db.query('INSERT INTO comments (comment) VALUES (?);', [comment], (err, results) => {
         if (err) {
           console.error('Error adding todo:', err);
           return res.status(500).send('Error adding todo');
@@ -70,7 +70,7 @@ router.post('/create', function (req, res, next) {
       res.status(500).send('Error adding todo');
     }
 });
-
+/*
 router.post('/delete', function (req, res, next) {
     const { id } = req.body;
     try {
@@ -88,5 +88,5 @@ router.post('/delete', function (req, res, next) {
         res.status(500).send('Error deleting todo:');
     }
 });
-
+*/
 module.exports = router;

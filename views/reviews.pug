@@ -1,4 +1,17 @@
 extends layout
 
 block content
-  p reviews
+  h1 Reviews
+  hr
+  h2 Leave a Comment
+  form(method='POST' action='/create')
+    label(for='name') Name:
+    input(type='text', name='name', id='name', required)
+    label(for='Comment') Comment:
+    input(type='text', name='comment', id='comment', required)
+    button(type='submit') Add Comment
+
+  //-ol
+    each val in comments
+      li
+        span= val.comment

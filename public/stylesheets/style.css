@@ -4,9 +4,21 @@ body {
   margin: 0px;
 }
 
-a {
-  color: #00B7FF;
+p {
+  text-align: center;
 }
+
+h1 {
+  font-family: "Italianno", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 100px;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Header and Navigator */
 
 .header {
   display: flex;
@@ -26,6 +38,7 @@ a {
 nav {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 40px;
 }
 
 .button {
@@ -41,42 +54,47 @@ nav {
   text-align: center;
 }
 
-p {
-  text-align: center;
-}
+/* Image Text Combo*/
 
 .picture {
-  margin: 20%;
-  display: grid;
-  grid-template-columns: 50% auto;
-  grid-template-rows: 180px auto;
-  grid-template-areas: 
-      "image head"
-      ". text";
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
   justify-content: center;
 }
 
 .picture > img{
   display: inline-block;
-  background-color:#10291D;
-  grid-area: image;
-  height: 100%;
-  padding: 20px;
-  margin-right: 10px;
+  margin: 3%;
+  border: 5px solid #F7C64A;
+  height: 300px;
+  flex: 0 0 auto;
 }
 
-.picture > h1{
+.description{
   display: inline-block;
-  background-color:#10291D;
-  grid-area: head;
-  padding: 20px;
-  margin-right: 10px;
+  margin: 3%;
+  flex: 1 1 50%;
+  min-width: 50%;
 }
 
-.picture > p{
-  display: inline-block;
-  background-color:#10291D;
-  grid-area: text;
-  padding: 20px;
-  margin-right: 10px;
+.description > h2 {
+  font-family: "Italianno", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 70px;
+  text-align: center;
+}
+
+.description > p {
+  font-style: normal;
+}
+
+hr {
+  display: block;
+  height: 0px;
+  border: 0;
+  border-top: 3px solid #F7C64A;
+  margin: 30px;
+  margin-bottom: 0px;
 }
