@@ -4,10 +4,6 @@ block content
   p 
     i A small, family-owned donut and coffee shop that’s been serving the downtown community since 1992.
 
-
-//- 
-  h1= title
-  p Welcome to #{title}
   ol
   each val in todos
     li
@@ -15,14 +11,28 @@ block content
       if val.completed > 0
         span Completed
       else
-        pan Not Completed
-      form(method='POST' action='/delete')
-        input(type='hidden', name='id', value=val.id)
-        button(type='submit') Delete
-
+        span Not Completed
+      // Buttons for Editing, Deleting, and Completing
+      div(class='buttonHolders')
+        // Opens the Edit Box
+        button(type='submit' class='editButton') Edit
+        //Edit Box
+        form(method='POST' action='/edit', class='editorForm', hidden)
+          input(type='hidden', name='id', value=val.id)
+          input(type='text', name='editor', value=val.task, class='editTask')
+          button(type='submit', class='confirmButton') Confirm
+        // Check Button
+        form(method='POST' action='/complete')
+          input(type='hidden', name='id', value=val.id)
+          button(type='submit' class='checkButton') Check
+        // Delete Button
+        form(method='POST' action='/delete')
+          input(type='hidden', name='id', value=val.id)
+          button(type='submit') Delete
+  //New Task Menu
   hr
   h2 Add a new task
   form(method='POST' action='/create')
     label(for='task') Task:
     input(type='text', name='task', id='task', required)
-    button(type='submit') Create Task
+    button(type='submit' id='taskButton') Create Task
