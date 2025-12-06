@@ -5,5 +5,5 @@ USE cs208demo;
 CREATE TABLE IF NOT EXISTS comments (
     id INT AUTO_INCREMENT PRIMARY KEY,
     commenterName VARCHAR(255) NOT NULL,
-    comment VARCHAR(255) NOT NULL
+    comment VARCHAR(600) NOT NULL
 );

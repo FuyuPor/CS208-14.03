@@ -3,36 +3,11 @@ extends layout
 block content
   p 
     i A small, family-owned donut and coffee shop that’s been serving the downtown community since 1992.
-
-  ol
-  each val in todos
-    li
-      span= val.task + ' - '
-      if val.completed > 0
-        span Completed
-      else
-        span Not Completed
-      // Buttons for Editing, Deleting, and Completing
-      div(class='buttonHolders')
-        // Opens the Edit Box
-        button(type='submit' class='editButton') Edit
-        //Edit Box
-        form(method='POST' action='/edit', class='editorForm', hidden)
-          input(type='hidden', name='id', value=val.id)
-          input(type='text', name='editor', value=val.task, class='editTask')
-          button(type='submit', class='confirmButton') Confirm
-        // Check Button
-        form(method='POST' action='/complete')
-          input(type='hidden', name='id', value=val.id)
-          button(type='submit' class='checkButton') Check
-        // Delete Button
-        form(method='POST' action='/delete')
-          input(type='hidden', name='id', value=val.id)
-          button(type='submit') Delete
-  //New Task Menu
+  p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   hr
-  h2 Add a new task
-  form(method='POST' action='/create')
-    label(for='task') Task:
-    input(type='text', name='task', id='task', required)
-    button(type='submit' id='taskButton') Create Task
+  h2 Order Online!
+  div(class='appHolder')
+    form(method='GET' action='https://www.doordash.com')
+      input(type="image", src="/images/Doordash.png", alt="Doordash Logo",)
+    form(method='GET' action='https://www.ubereats.com')
+      input(type="image", src="/images/UberEats.png", alt="UberEats Logo",)
