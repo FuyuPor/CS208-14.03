@@ -4,6 +4,7 @@ block content
   h1 Reviews
   hr
   div(class='formHolder')
+    //- Commenting form
     h2 Leave a Comment
     form(method='POST' action='/comment')
       div(id='nameForm')
@@ -14,6 +15,7 @@ block content
       textarea(type='text', name='comment', id='comment', required)
       button(type='submit') Add Comment
   hr
+  //- Submitted Comments
   ol
   each val in comments
     li(class='review')
@@ -21,4 +23,3 @@ block content
         p= val.comment
       p
         cite= '- ' + val.commenterName
-//- Don't eat $50 worth of sour patch kids or else your teeth will become hyper sensitive. I know this because one Halloween night 15 years ago a tungsten cube bestowed me immortality, allowing me to consume as many sour patch kids as my heart desired. Big mistake. It started okay, but the chewing inevitably left my teeth vulnerable to outside attacks.
