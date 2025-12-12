@@ -57,6 +57,7 @@ nav {
 
 .button {
   border-radius: 5px;
+  border: 2px solid #10291D;
   margin: 20px;
   padding: 20px;
   background-color: #10291D;
@@ -66,6 +67,10 @@ nav {
   font-size: 24px;
   width: 15%;
   text-align: center;
+}
+
+.button:hover {
+  background-color: #7E7F9A;
 }
 
 /* Image Text Combo*/
@@ -155,7 +160,7 @@ nav {
 
 li:has(> blockquote) {
   list-style: none;
-  width: 40%;
+  max-width: 800px;
   margin: 10px auto;
   padding: 15px;
   border-radius: 5px;
@@ -231,6 +236,10 @@ form > button {
   text-align: center;
 }
 
+form > button:hover {
+  background-color: #7E7F9A;
+}
+
 label {
   font: 20px 'Montserrat Regular', Helvetica, Arial, sans-serif;
 }
@@ -245,4 +254,3 @@ label {
 .appHolder > form > input{
   width: 200px;
 }
-
